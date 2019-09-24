@@ -1,17 +1,18 @@
 version: '2'
+
 services:
-  python:
-    image: vijay/python-redis:1
-    container_name: python
-    environment:
-      - "redis_host=redis"
+
+  nginx:
+    image: "nginx"
     ports:
-     - "8080:5000"
+     - "8070:80"
+
     networks:
       - network1-app
+
   redis:
-    container_name: redis
     image: "redis"
+
     networks:
       - network1-app
 networks:
